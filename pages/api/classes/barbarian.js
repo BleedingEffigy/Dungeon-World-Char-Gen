@@ -24,7 +24,7 @@ export default function handler(req, res) {
       bonds: ['is puny and foolish, but amusing to me.', '’s ways are strange and confusing.', 'is always getting into trouble—I must protect them from themselves.', 'shares my hunger for glory; the earth will tremble at our passing!'],
       gear: {
           load: '8+STR',
-          backpack: [],
+          backpack: ['dungeon rations (5 uses, 1 weight)', 'a dagger (hand, 1 weight)', 'some token of where you’ve traveled or where you’re from'],
           randomWeapon: [ 'Axe (close, 1 weight)', 'Two handed sword (close, +1 damage, 2 weight)' ],
           randomArmor: ['Adventuring gear (1 weight) and dungeon rations (5 uses, 1 weight)', 'Chainmail (1 armor, 1 weight)']
       },
