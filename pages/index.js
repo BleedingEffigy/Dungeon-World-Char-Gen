@@ -128,12 +128,89 @@ const [stats, setStats] = useState(new Map())
             </div>
             }
 
-            { stats.size == 6 &&
               <div>
-                The races
+                <div>
+                  <label>Eyes:</label>
+                  <select class="" name="eyes" id="eyes">
+                    <option value=""> Tormented Eyes </option>
+                  </select>
+                </div>
+                <div>
+                  <label>Body:</label>
+                  <select class="" name="body" id="body">
+                    <option> Mighty Thews </option>
+                  </select>
+                </div>
+                <div>
+                  <label>Tattoos:</label>
+                  <select class="" name="tattoos" id="tattoos">
+                    <option> Strange Tattoos </option>
+                  </select>
+                </div>
+                <div>
+                  <label>Clothes:</label>
+                  <select class="" name="clothes" id="clothes">
+                    <option> Scraps </option>
+                  </select>
+                </div>
               </div>
-            }
+              <br/>
 
+              <div>
+                <div className="">Max Hp: 18</div>
+                <div className="">Base Dmg: d10</div>
+              </div>
+              <br/>
+
+              <div>
+                <h2>alignment</h2>
+                <div>
+                  <input type="radio" id="chaotic" name='alignment' value='chaotic' />
+                  <label htmlFor="chaotic" >Chaotic</label>
+                  <div>You eschew a convention of the civilized world.</div>
+                </div>
+                <div>
+                  <input type="radio" id="neutral" name='alignment' value='neutral'/>
+                  <label htmlFor="neutral" id="neutral" name='neutral' >Neutral</label>
+                  <div>Teach someone the ways of your people.</div>
+                </div>
+              </div>
+
+              <div>
+                <div className="">load: 18</div>
+                <div className="">backpack: dungeon rations (5 uses, 1 weight), a dagger (hand, 1 weight), some token of where you’ve traveled or where you’re from</div>
+              </div>
+              
+              <div>
+                <input type="radio" id="axe" name="weapon" value="axe" ></input>
+                <label htmlFor="">Axe (close, 1 weight)</label>
+                <input type="radio" id="2h-sword" name="weapon" value="2h-sword" ></input>
+                <label htmlFor="">Two handed sword (close, +1 damage, 2 weight)</label>
+                
+              </div>
+              <div>
+                <input type="radio" id="gear" name="armor" value="gear" ></input>
+                <label htmlFor="">Gear</label>
+                <input type="radio" id="chainmail" name="armor" value="chainmail" ></input>
+                <label htmlFor="">Chainmail</label>
+              </div>
+
+              <div>
+                <li>
+                  <ul>
+                    Herculean Appetites : Others may content themselves with just a taste of wine, or dominion over a servant
+           or two, but you want more. Choose two appetites. While pursuing one of your appetites if you would roll for a 
+           move, instead of rolling 2d6 you roll 1d6+1d8. If the d6 is the higher die of the pair, the GM will also introduce 
+           a complication or danger that comes about due to your heedless pursuits.
+                  <div>
+                    <label>pick two appetites</label>
+                    <select class="" name="" id="" >
+                      <option></option>
+                    </select>
+                  </div>
+                  </ul>
+                </li>
+              </div>
           </form>
         </div>
       </div>
