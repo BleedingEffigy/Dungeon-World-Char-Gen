@@ -131,7 +131,7 @@ const [stats, setStats] = useState(new Map())
               <div>
                 <div>
                   <label>Eyes:</label>
-                  <select class="" name="eyes" id="eyes">
+                  <select className="" name="eyes" id="eyes">
                     <option value=""> Tormented Eyes </option>
                   </select>
                 </div>
@@ -143,13 +143,13 @@ const [stats, setStats] = useState(new Map())
                 </div>
                 <div>
                   <label>Tattoos:</label>
-                  <select class="" name="tattoos" id="tattoos">
+                  <select className="" name="tattoos" id="tattoos">
                     <option> Strange Tattoos </option>
                   </select>
                 </div>
                 <div>
                   <label>Clothes:</label>
-                  <select class="" name="clothes" id="clothes">
+                  <select className="" name="clothes" id="clothes">
                     <option> Scraps </option>
                   </select>
                 </div>
@@ -195,21 +195,22 @@ const [stats, setStats] = useState(new Map())
                 <label htmlFor="">Chainmail</label>
               </div>
 
-              <div>
-                <li>
-                  <ul>
+              <div className="w-1/2">
+                <h2 className="text-3xl">Skills</h2>
+                <ul className="list-inside bg-pink-200">
+                  <li>
+                  <p>
                     Herculean Appetites : Others may content themselves with just a taste of wine, or dominion over a servant
-           or two, but you want more. Choose two appetites. While pursuing one of your appetites if you would roll for a 
-           move, instead of rolling 2d6 you roll 1d6+1d8. If the d6 is the higher die of the pair, the GM will also introduce 
-           a complication or danger that comes about due to your heedless pursuits.
+  
+                  </p>
                   <div>
                     <label>pick two appetites</label>
-                    <select class="" name="" id="" >
-                      <option></option>
+                    <select className="" name="" id="" >
+                      <option>Pure Destruction</option>
                     </select>
                   </div>
-                  </ul>
-                </li>
+                  </li>
+                </ul>
               </div>
           </form>
         </div>
