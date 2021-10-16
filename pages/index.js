@@ -137,7 +137,7 @@ const [stats, setStats] = useState(new Map())
                 </div>
                 <div>
                   <label>Body:</label>
-                  <select class="" name="body" id="body">
+                  <select className="" name="body" id="body">
                     <option> Mighty Thews </option>
                   </select>
                 </div>
