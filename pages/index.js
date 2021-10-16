@@ -25,7 +25,7 @@ const [stats, setStats] = useState(new Map())
         <div className="flex-col pb-12">
           <form>
             <label htmlFor="class">Class: 
-            <select class="mt-8 ml-2 rounded border-2" name="class" id="class" 
+            <select className="mt-8 ml-2 rounded border-2" name="class" id="class" 
               onChange={(e) => setCharClass(e.target.value)}
               value={charClass}>
               <option selected value=''>-- select a class --</option>
