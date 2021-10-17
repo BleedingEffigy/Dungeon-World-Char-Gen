@@ -17,7 +17,8 @@ const statsMap = {
 const [stats, setStats] = useState(statsMap)
 const [steps, setSteps] = useState(0)
 const [race, setRace] = useState('')
-const [looks, setLooks] = useState(new Map())
+const [looks, setLooks] = useState({})
+const [alignment, setAlignment] = useState('')
 
     return (
         <div>
@@ -174,14 +175,20 @@ const [looks, setLooks] = useState(new Map())
                             <div>
                                 <div>
                                 <label>Eyes:
-                                <select className="" name="eyes" id="eyes" onChange={e => setLooks(looks.set('eyes', e.target.value))}>
+                                <select className="" name="eyes" id="eyes" 
+                                onChange={e => setLooks({...looks, 'eyes' : e.target.value})}
+                                value={looks.eyes || ''}
+                                required>
                                     <option selected value="" >--</option>
                                     <option value="Tormented Eyes" selected> Tormented Eyes </option>
                                 </select></label>
                                 </div>
                                 <div>
                                 <label>Body:
-                                <select className="" name="body" id="body">
+                                <select className="" name="body" id="body"
+                                onChange={e => setLooks({...looks, 'body' : e.target.value})}
+                                value={looks.body || ''}
+                                >
                                     <option selected value="" >--</option>
                                     <option value="Mighty Thews" selected> Mighty Thews </option>
                                 </select></label>
@@ -213,7 +220,9 @@ const [looks, setLooks] = useState(new Map())
                             <div>
                              <h2>alignment</h2>
                                 <div>
-                                <input type="radio" id="chaotic" name='alignment' value='chaotic' />
+                                <input type="radio" id="chaotic" name='alignment' value='chaotic' 
+                                onChange={e => setAlignment(e.target.value)}
+                                value={alignment} />
                                 <label htmlFor="chaotic" >Chaotic</label>
                                 <div>You eschew a convention of the civilized world.</div>
                                 </div>
@@ -298,7 +307,7 @@ const [looks, setLooks] = useState(new Map())
                     <span>Name:{name}</span><br/>
                     <span>Class: {charClass}</span><br/>
                     <span>Race: {race}</span><br/>
-                    <span>Looks\n eyes: {looks.get('eyes')} </span><br/>
+                    <span>Looks\n eyes: {looks?.eyes} </span><br/>
                     <span>Max Hp: Base dmg:</span><br/>
                     <span>Str: {stats.str} </span><br/>
                     <span>Agi: {stats.agi}</span><br/>
