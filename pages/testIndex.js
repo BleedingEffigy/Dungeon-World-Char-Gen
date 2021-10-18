@@ -2,6 +2,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { React, useState} from 'react'
 
+export async function getStaticProps(context) {
+    const res = await fetch('http://localhost:3000/api/classes/barbarian')
+    const data = await res.json()
+    console.log(data)
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+    return {
+        data 
+    }
+}
 
 export default function TestHome() {
 const [charClass, setCharClass] = useState('')
@@ -19,7 +33,6 @@ const [steps, setSteps] = useState(0)
 const [race, setRace] = useState('')
 const [looks, setLooks] = useState({})
 const [alignment, setAlignment] = useState('')
-
     return (
         <div>
             <Head>
@@ -61,9 +74,12 @@ const [alignment, setAlignment] = useState('')
                             <input class="mt-2 ml-4 rounded p-4 border border-indigo-400 bg-indigo-200" id="name" name="name" type="text" autoComplete="name" required
                                     onChange={(e) => setName(e.target.value)}></input>
                             <br/>
-                            <label htmlFor="race">Race:</label>
-                            <input class="mt-2 ml-4 mr-2 rounded p-4 border border-indigo-400 bg-indigo-200" id="race" name="race" type="radio" value="Elf" required
-                                    onChange={e => setRace(e.target.value)}></input>Elf
+                            <h2>Race: </h2>
+                            
+                            <input class="mt-2 ml-4 mr-2 rounded p-4 border border-indigo-400 bg-indigo-200" 
+                                    type="radio" id="elf" name="race"  value="elf" required
+                                    onChange={e => setRace(e.target.value)}></input>
+                            <label htmlFor="race">Elf</label>
                             <br/>
                             <button className='' onClick={() => setSteps(steps-1)}>
                                 Back
@@ -228,7 +244,7 @@ const [alignment, setAlignment] = useState('')
                                 </div>
                                 <div>
                                 <input type="radio" id="neutral" name='alignment' value='neutral'/>
-                                <label htmlFor="neutral" id="neutral" name='neutral' >Neutral</label>
+                                <label htmlFor="neutral" >Neutral</label>
                                 <div>Teach someone the ways of your people.</div>
                                 </div>
                             </div>
